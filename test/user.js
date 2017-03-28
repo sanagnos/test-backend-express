@@ -55,7 +55,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -88,7 +88,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -121,7 +121,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user1}`,
         method  : 'GET'
       }, function (res) {
@@ -144,7 +144,7 @@ describe('user', function () {
       // initialize put request to update user 2
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2}`,
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
@@ -173,7 +173,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user1}`,
         method  : 'DELETE'
       }, function (res) {
@@ -197,7 +197,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user1}`,
         method  : 'GET'
       }, function (res) {
@@ -214,7 +214,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user1}`,
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
@@ -238,7 +238,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user1}`,
         method  : 'DELETE'
       }, function (res) {
@@ -258,7 +258,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2 + 1}`,
         method  : 'GET'
       }, function (res) {
@@ -275,7 +275,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2 + 1}`,
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
@@ -299,7 +299,7 @@ describe('user', function () {
       // initialize get request to read user 1
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2 + 1}`,
         method  : 'DELETE'
       }, function (res) {
@@ -318,7 +318,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -344,7 +344,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -363,7 +363,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -388,7 +388,7 @@ describe('user', function () {
       // initialize put request to update user 2
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2}`,
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
@@ -414,7 +414,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user/bad',
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
@@ -441,7 +441,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : `/user/${user2}`,
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
@@ -460,7 +460,7 @@ describe('user', function () {
       // initialize post request to create new user
       var req = http.request({
         hostname: 'localhost',
-        port    : 80,
+        port    : config.io.port,
         path    : '/user',
         method  : 'GET'
       }, function (res) {
