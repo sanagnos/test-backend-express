@@ -35,9 +35,9 @@ module.exports = {
     db.create('user', req.body, function (err, id) {
       if (err) {
         if (/ER_NO_DEFAULT_FOR_FIELD/.test(err.toString()))
-          return res.status(406).send('Missing required field')
+          return res.status(400).send('Missing required field')
         else if (/ER_PARSE_ERROR/.test(err.toString()))
-          return res.status(406).send('Corrupt body')
+          return res.status(400).send('Corrupt body')
         else return res.status(500).send(err.toString())
       }
       res.status(201).send({ id: id })
@@ -47,7 +47,7 @@ module.exports = {
   get: function (req, res) {
     db.read('user', req.params.id, function (err, data) {
       if (err) return res.status(500).send(err.toString())
-      if (!data) return res.status(204).end()
+      if (!data) return res.status(404).end()
       res.status(200).send(data)
     })
   },
@@ -58,12 +58,12 @@ module.exports = {
     db.update('user', req.params.id, req.body, function (err, data) {
       if (err) {
         if (/ER_BAD_FIELD_ERROR/.test(err.toString()))
-          return res.status(406).send('Unexpected field')
+          return res.status(400).send('Unexpected field')
         else if (/ER_PARSE_ERROR/.test(err.toString()))
-          return res.status(406).send('Corrupt body')
+          return res.status(400).send('Corrupt body')
         else return res.status(500).send(err.toString())
       }
-      if (!data.changedRows) return res.status(204).end()
+      if (!data.changedRows) return res.status(404).end()
       res.status(200).end()
     })
   },
@@ -71,7 +71,7 @@ module.exports = {
   delete: function (req, res) {
     db.delete('user', req.params.id, function (err, data) {
       if (err) return res.status(500).send(err.toString())
-      if (!data.affectedRows) return res.status(204).end()
+      if (!data.affectedRows) return res.status(404).end()
       res.status(200).end()
     })
   }

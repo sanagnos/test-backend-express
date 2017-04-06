@@ -201,7 +201,7 @@ describe('user', function () {
         path    : `/user/${user1}`,
         method  : 'GET'
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -219,7 +219,7 @@ describe('user', function () {
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -242,7 +242,7 @@ describe('user', function () {
         path    : `/user/${user1}`,
         method  : 'DELETE'
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -262,7 +262,7 @@ describe('user', function () {
         path    : `/user/${user2 + 1}`,
         method  : 'GET'
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -280,7 +280,7 @@ describe('user', function () {
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -303,7 +303,7 @@ describe('user', function () {
         path    : `/user/${user2 + 1}`,
         method  : 'DELETE'
       }, function (res) {
-        assert(res.statusCode === 204)
+        assert(res.statusCode === 404)
         done()
       })
 
@@ -323,7 +323,7 @@ describe('user', function () {
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 406)
+        assert(res.statusCode === 400)
         done()
       })
 
@@ -349,7 +349,7 @@ describe('user', function () {
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 406)
+        assert(res.statusCode === 400)
         done()
       })
 
@@ -368,7 +368,7 @@ describe('user', function () {
         method  : 'POST',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 406)
+        assert(res.statusCode === 400)
         done()
       })
 
@@ -393,7 +393,7 @@ describe('user', function () {
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 406)
+        assert(res.statusCode === 400)
         done()
       })
 
@@ -446,7 +446,7 @@ describe('user', function () {
         method  : 'PUT',
         headers : { 'Content-Type': 'application/json' }
       }, function (res) {
-        assert(res.statusCode === 406)
+        assert(res.statusCode === 400)
         done()
       })
 
